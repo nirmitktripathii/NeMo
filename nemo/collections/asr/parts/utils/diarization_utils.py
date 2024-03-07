@@ -68,7 +68,7 @@ def write_txt(w_path: str, val: str):
         val (str):
             String variable to be written
     """
-    with open(w_path, "w") as output:
+    with open(w_path, "w", encoding="utf-8") as output:
         output.write(val + '\n')
 
 
@@ -1286,7 +1286,8 @@ class OfflineDiarWithASR:
                 color = ''
 
             # cast timestamp to the correct format
-            datetime_offset = 16 * 3600
+            # datetime_offset = 16 * 3600
+            datetime_offset = 0 * 3600
             if float(start_point) > 3600:
                 time_str = '%H:%M:%S.%f'
             else:
